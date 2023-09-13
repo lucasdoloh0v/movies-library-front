@@ -33,6 +33,7 @@ export const Login = styled.form`
     font-weight: 500;
 
     margin-top: 48px;
+    margin-bottom: 40px;
   }
 
   .enterBtn {
@@ -48,4 +49,5 @@ export const BackgroundImg = styled.div`
   flex: 1;
   background: url(${backgroundImg}) no-repeat center center;
   background-size: cover;
+  filter: opacity(0.5);
 `;

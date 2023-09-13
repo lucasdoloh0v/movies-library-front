@@ -1,6 +1,8 @@
 import { BackgroundImg, Container, Login } from './styles';
+import { FiMail, FiLock } from 'react-icons/fi';
 
 import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
 
 export function SignIn() {
   return (
@@ -10,10 +12,10 @@ export function SignIn() {
         <p>Aplicação para acompanhar tudo que assistir</p>
 
         <h3>Faça seu Login</h3>
-        {/* <Input />
-        <Input /> */}
+        <Input icon={FiMail} placeholder="E-mail" />
+        <Input icon={FiLock} placeholder="Senha" type="password" />
 
-        <Button title="entrar" className="enterBtn" />
+        <Button title="Entrar" className="enterBtn" />
         <Button title="Criar conta" variant="text-button" className="createAccBtn" />
       </Login>
       <BackgroundImg />
