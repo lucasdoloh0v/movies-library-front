@@ -14,8 +14,8 @@ export const Login = styled.form`
   align-items: flex-start;
   justify-content: center;
 
-  padding: 0 134px;
-  width: 50%;
+  margin: 0 224px;
+  max-width: 352px;
 
   > h1 {
     color: ${({ theme }) => theme.colors.pink};
@@ -33,6 +33,14 @@ export const Login = styled.form`
     font-weight: 500;
 
     margin-top: 48px;
+  }
+
+  .enterBtn {
+    margin-top: 24px;
+  }
+
+  .createAccBtn {
+    margin-top: px;
   }
 `;
 

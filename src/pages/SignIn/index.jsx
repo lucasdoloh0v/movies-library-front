@@ -1,5 +1,7 @@
 import { BackgroundImg, Container, Login } from './styles';
 
+import { Button } from '../../components/Button';
+
 export function SignIn() {
   return (
     <Container>
@@ -9,10 +11,10 @@ export function SignIn() {
 
         <h3>Faça seu Login</h3>
         {/* <Input />
-        <Input />
+        <Input /> */}
 
-        <Button title='entrar' />
-        <Button title='Criar conta' variant='text-button' /> */}
+        <Button title="entrar" className="enterBtn" />
+        <Button title="Criar conta" variant="text-button" className="createAccBtn" />
       </Login>
       <BackgroundImg />
     </Container>
