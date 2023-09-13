@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
 `;
 
-export const Login = styled.form`
+export const Content = styled.div`
   display: flex;
 
   flex-direction: column;
@@ -26,22 +26,6 @@ export const Login = styled.form`
   > p {
     color: ${({ theme }) => theme.colors.gray_200};
     font-size: 14px;
-  }
-
-  > h3 {
-    font-size: 24px;
-    font-weight: 500;
-
-    margin-top: 48px;
-    margin-bottom: 40px;
-  }
-
-  .enterBtn {
-    margin-top: 24px;
-  }
-
-  .createAccBtn {
-    margin-top: px;
   }
 `;
 

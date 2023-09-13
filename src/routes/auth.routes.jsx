@@ -1,10 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import { SignIn } from '../pages/SignIn';
+import { UnauthenticatedHome } from '../pages/UnauthenticatedHome';
 
 export function AuthRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<SignIn />} />
+      <Route path="/" element={<UnauthenticatedHome />} />
+      <Route path="/register" element={<UnauthenticatedHome />} />
     </Routes>
   );
 }
