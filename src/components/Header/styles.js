@@ -4,11 +4,13 @@ export const Container = styled.header`
   grid-area: header;
   width: 100%;
   height: 100%;
+  padding: 0 123px;
+
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray_800};
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 123px;
 
   > h1 {
     width: 100%;
