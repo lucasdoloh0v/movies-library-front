@@ -1,13 +1,13 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import AuthRoutes from './auth.routes';
+import { AuthenticatedRoutes } from './athenticated.routes';
+// import { AuthRoutes } from './auth.routes';
 
-export function Routes() {
+export function AppRoutes() {
   return (
     <BrowserRouter>
-      <AuthRoutes />
+      {/* <AuthRoutes /> */}
+      <AuthenticatedRoutes />
     </BrowserRouter>
   );
 }
-
-export default Routes;
