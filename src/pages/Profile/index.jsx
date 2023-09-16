@@ -11,7 +11,7 @@ export function Profile() {
   return (
     <Container>
       <Header>
-        <Button title="voltar" icon={FiArrowLeft} variant="text-button" onClick={() => navigate('/')} />
+        <Button title="voltar" icon={FiArrowLeft} variant="text-button" onClick={() => navigate(-1)} />
       </Header>
 
       <ProfileForm>

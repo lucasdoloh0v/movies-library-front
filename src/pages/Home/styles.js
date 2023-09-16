@@ -19,6 +19,8 @@ export const Content = styled.main`
     align-items: center;
     justify-content: space-between;
 
+    margin-bottom: 40px;
+
     > p {
       font-size: 32px;
     }
@@ -32,20 +34,11 @@ export const Content = styled.main`
 export const Movies = styled.div`
   width: 100%;
   height: 472px;
-  margin-top: 40px;
+  padding: 0 16px;
 
   overflow-y: auto;
 
   > div:last-child {
     margin: 0;
-  }
-
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.colors.pink};
-    border-radius: 8px;
   }
 `;

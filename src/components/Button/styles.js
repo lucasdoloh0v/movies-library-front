@@ -29,4 +29,13 @@ export const Container = styled.button`
       background-color: transparent;
       color: ${theme.colors.pink};
     `}
+
+  ${({ $variant, theme }) =>
+    $variant === 'secondary' &&
+    css`
+      background-color: #0d0c0f;
+      color: ${theme.colors.pink};
+
+      border-radius: 10px;
+    `}
 `;

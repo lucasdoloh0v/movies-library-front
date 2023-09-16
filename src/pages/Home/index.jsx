@@ -1,8 +1,9 @@
 import { FiPlus } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
+import { Container, Content, Movies } from './styles';
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Button';
-import { Container, Content, Movies } from './styles';
 import { MovieCard } from '../../components/MovieCard';
 
 const movieExample = {
@@ -14,13 +15,15 @@ const movieExample = {
 };
 
 export function Home() {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Header />
       <Content>
         <div>
           <p>Meus filmes</p>
-          <Button title="Adicionar filme" icon={FiPlus} />
+          <Button title="Adicionar filme" icon={FiPlus} onClick={() => navigate('/new-movie')} />
         </div>
         <Movies>
           <MovieCard movie={movieExample} />
