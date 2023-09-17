@@ -7,6 +7,7 @@ import { Button } from '../../components/Button';
 import { MovieCard } from '../../components/MovieCard';
 
 const movieExample = {
+  id: 1,
   title: 'O Menu',
   rating: 4,
   description:
@@ -26,7 +27,7 @@ export function Home() {
           <Button title="Adicionar filme" icon={FiPlus} onClick={() => navigate('/new-movie')} />
         </div>
         <Movies>
-          <MovieCard movie={movieExample} />
+          <MovieCard movie={movieExample} onClick={() => navigate(`/movie-detail/${movieExample.id}`)} />
           <MovieCard movie={movieExample} />
           <MovieCard movie={movieExample} />
         </Movies>

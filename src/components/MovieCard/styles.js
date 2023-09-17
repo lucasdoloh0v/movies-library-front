@@ -25,18 +25,13 @@ export const Container = styled.div`
 
   h2 {
     font-size: 24px;
-  }
-`;
-
-export const Rating = styled.div`
-  margin-top: 8px;
-
-  > svg {
-    color: ${({ theme }) => theme.colors.pink};
+    margin-bottom: 8px;
   }
 `;
 
 export const Description = styled.p`
+  margin-top: 8px;
+
   color: ${({ theme }) => theme.colors.gray_200};
 
   overflow: hidden;
