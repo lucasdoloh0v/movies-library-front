@@ -11,7 +11,7 @@ export function AuthProvider({ children }) {
 
   const getUser = useCallback(async () => {
     if (Object.keys(cookie).length) {
-      api.defaults.headers.authorization = `Bearer ${cookie.accessToken}`;
+      api.defaults.headers.common['Authorization'] = `Bearer ${cookie.accessToken}`;
       try {
         const userResponse = await api.get('/sessions');
 
@@ -34,7 +34,8 @@ export function AuthProvider({ children }) {
         data: { token },
       } = await api.post('/sessions', { email, password });
 
-      api.defaults.headers.authorization = `Bearer ${token}`;
+      api.defaults.headers.common['Authorization'] = `Bearer ${cookie.accessToken}`;
+
       setCookie('accessToken', token);
     } catch (error) {
       if (error.response) {
