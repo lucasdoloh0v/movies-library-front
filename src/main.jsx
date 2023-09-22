@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
+import { CookiesProvider } from 'react-cookie';
 
 import theme from './styles/theme';
 import GlobalStyles from './styles/global';
@@ -11,9 +12,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <AuthProvider>
-        <AppRoutes />
-      </AuthProvider>
+      <CookiesProvider defaultSetOptions={{ path: '/' }}>
+        <AuthProvider>
+          <AppRoutes />
+        </AuthProvider>
+      </CookiesProvider>
     </ThemeProvider>
   </StrictMode>,
 );
