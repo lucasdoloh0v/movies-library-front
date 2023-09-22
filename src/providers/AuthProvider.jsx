@@ -25,5 +25,10 @@ export function AuthProvider({ children }) {
     }
   }
 
-  return <AuthContext.Provider value={{ signIn, user }}>{children}</AuthContext.Provider>;
+  async function logOut() {
+    document.cookie = 'accessToken=; Max-Age=0;';
+    setUser({});
+  }
+
+  return <AuthContext.Provider value={{ signIn, logOut, user }}>{children}</AuthContext.Provider>;
 }

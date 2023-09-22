@@ -7,5 +7,5 @@ import { AuthenticatedRoutes } from './athenticated.routes';
 
 export function AppRoutes() {
   const { user } = useAuth();
-  return <BrowserRouter>{user ? <AuthenticatedRoutes /> : <AuthRoutes />}</BrowserRouter>;
+  return <BrowserRouter>{Object.keys(user).length ? <AuthenticatedRoutes /> : <AuthRoutes />}</BrowserRouter>;
 }
