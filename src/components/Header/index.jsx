@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../../hooks/auth';
+import avatarPlaceolder from '../../assets/avatar_placeholder.svg';
+import { api } from '../../services/api';
 
 import { Container, Profile } from './styles';
 import { Input } from '../Input';
@@ -8,7 +10,9 @@ import { Input } from '../Input';
 export function Header() {
   const navigate = useNavigate();
 
-  const { logOut } = useAuth();
+  const { logOut, user } = useAuth();
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceolder;
 
   function handleLogOut() {
     logOut();
@@ -20,12 +24,12 @@ export function Header() {
       <Input type="text" placeholder="Pesquisar pelo título" />
       <Profile>
         <div>
-          <p onClick={() => navigate('/profile')}>Lucas Alves</p>
+          <p onClick={() => navigate('/profile')}>{user.name}</p>
           <button type="button" onClick={handleLogOut}>
             sair
           </button>
         </div>
-        <img src="https://github.com/lucasdoloh0v.png" alt="Usuário" onClick={() => navigate('/profile')} />
+        <img src={avatarUrl} alt="Usuário" onClick={() => navigate('/profile')} />
       </Profile>
     </Container>
   );
