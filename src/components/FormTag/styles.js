@@ -11,12 +11,19 @@ export const Container = styled.div`
 
   > svg {
     color: ${({ theme }) => theme.colors.pink};
-    margin-left: 16px;
   }
 
-  > p {
+  > input {
     font-size: 16px;
     line-height: 16px;
+    max-width: 199px;
+
+    background: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   ${({ theme, $isActive }) =>
@@ -25,12 +32,17 @@ export const Container = styled.div`
           border: none;
 
           background-color: ${theme.colors.background_900};
-          color: ${theme.colors.white};
+
+          > input {
+            color: ${theme.colors.white};
+          }
         `
       : css`
           border: 1px dashed ${({ theme }) => theme.colors.white};
 
-          color: ${theme.colors.gray_400};
           background-color: ${theme.colors.gray_400};
+          > input {
+            color: ${theme.colors.white};
+          }
         `}
 `;

@@ -10,8 +10,8 @@ export const Container = styled.button`
 
   border: none;
 
-  > svg {
-    margin-right: 8px;
+  > p {
+    margin-left: 8px;
   }
 
   ${({ $variant, theme }) =>

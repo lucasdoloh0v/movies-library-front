@@ -1,12 +1,13 @@
 import { FiPlus, FiX } from 'react-icons/fi';
 
 import { Container } from './styles';
+import { Button } from '../Button';
 
-export function FormTag({ title, isActive = false, ...rest }) {
+export function FormTag({ value, callback, isActive = false, ...rest }) {
   return (
-    <Container $isActive={isActive} {...rest}>
-      <p>{title ?? 'Nova tag'}</p>
-      {isActive ? <FiX size={22} /> : <FiPlus size={22} />}
+    <Container $isActive={isActive}>
+      <input value={value} placeholder="Nova tag" readOnly={isActive} {...rest} />
+      <Button type="button" variant="text-button" size={22} icon={isActive ? FiX : FiPlus} onClick={callback} />
     </Container>
   );
 }

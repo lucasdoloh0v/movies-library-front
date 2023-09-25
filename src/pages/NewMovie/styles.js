@@ -83,19 +83,15 @@ export const TextArea = styled.textarea`
 
 export const Tags = styled.div`
   display: flex;
+  flex-wrap: wrap;
 
-  min-height: 88px;
   margin-top: 24px;
-  padding: 16px;
+  padding: 8px;
   border-radius: 8px;
 
   background-color: #0d0c0f;
 
   > div {
-    margin-right: 16px;
-
-    &:last-child {
-      margin: 0;
-    }
+    margin: 8px;
   }
 `;

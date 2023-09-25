@@ -30,5 +30,11 @@ export const Container = styled.div`
     &:focus {
       outline: none;
     }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
   }
 `;

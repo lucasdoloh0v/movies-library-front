@@ -1,10 +1,10 @@
 import { Container } from './styles';
 
-export function Button({ variant = 'primary', icon: Icon, title, ...rest }) {
+export function Button({ variant = 'primary', icon: Icon, title, size, ...rest }) {
   return (
     <Container $variant={variant} {...rest}>
-      {Icon && <Icon />}
-      <p>{title}</p>
+      {Icon && <Icon size={size} />}
+      {title && <p>{title}</p>}
     </Container>
   );
 }
