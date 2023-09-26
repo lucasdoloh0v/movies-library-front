@@ -9,7 +9,7 @@ import { api } from '../../services/api';
 import { Container, Profile } from './styles';
 import { Input } from '../Input';
 
-export function Header() {
+export function Header({ value, handleSearchMovie }) {
   const navigate = useNavigate();
 
   const { setLoading } = useLoading();
@@ -27,7 +27,14 @@ export function Header() {
   return (
     <Container>
       <h1>Movies library</h1>
-      <Input type="text" placeholder="Pesquisar pelo título" />
+      {handleSearchMovie && (
+        <Input
+          type="text"
+          placeholder="Pesquisar pelo título"
+          value={value}
+          onChange={({ target }) => handleSearchMovie(target)}
+        />
+      )}
       <Profile>
         <div>
           <p onClick={() => navigate('/profile')}>{user.name}</p>

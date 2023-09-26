@@ -12,7 +12,7 @@ export function MovieCard({ movie, ...rest }) {
       <Description>{description}</Description>
       <Tags>
         {tags.map((tag) => (
-          <Tag name={tag} key={tag} />
+          <Tag name={tag.name} key={tag.id} />
         ))}
       </Tags>
     </Container>
