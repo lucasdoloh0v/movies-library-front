@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../../hooks/auth';
+import { useLoading } from '../../hooks/useLoading';
+
 import avatarPlaceolder from '../../assets/avatar_placeholder.svg';
 import { api } from '../../services/api';
 
@@ -10,11 +12,15 @@ import { Input } from '../Input';
 export function Header() {
   const navigate = useNavigate();
 
+  const { setLoading } = useLoading();
+
   const { logOut, user } = useAuth();
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceolder;
 
   function handleLogOut() {
+    setLoading(true);
+    navigate('/');
     logOut();
   }
 

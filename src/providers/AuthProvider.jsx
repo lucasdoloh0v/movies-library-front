@@ -1,13 +1,15 @@
 import { createContext, useCallback, useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 
 import { api } from '../services/api';
-import { useCookies } from 'react-cookie';
+import { useLoading } from '../hooks/useLoading';
 
 export const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState({});
   const [cookie, setCookie, removeCookie] = useCookies(['accessToken']);
+  const { setLoading } = useLoading();
 
   const getUser = useCallback(async () => {
     if (Object.keys(cookie).length) {
@@ -16,13 +18,17 @@ export function AuthProvider({ children }) {
         const { data } = await api.get('/sessions');
 
         setUser(data.user);
+        setLoading(false);
       } catch (error) {
         if (error.response.status === 401) {
           alert('Sua sessão expirou');
         }
       }
+    } else {
+      setUser({});
+      setLoading(false);
     }
-  }, [cookie]);
+  }, [cookie, setLoading]);
 
   useEffect(() => {
     getUser();
@@ -48,7 +54,6 @@ export function AuthProvider({ children }) {
 
   function logOut() {
     removeCookie('accessToken');
-    setUser({});
   }
 
   async function updateProfile(userUpdated, avatarFile) {

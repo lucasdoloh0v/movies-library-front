@@ -7,15 +7,18 @@ import theme from './styles/theme';
 import GlobalStyles from './styles/global';
 import { AppRoutes } from './routes';
 import { AuthProvider } from './providers/AuthProvider';
+import { LoadingProvider } from './providers/LoadingProvider';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <CookiesProvider defaultSetOptions={{ path: '/' }}>
-        <AuthProvider>
-          <AppRoutes />
-        </AuthProvider>
+        <LoadingProvider>
+          <AuthProvider>
+            <AppRoutes />
+          </AuthProvider>
+        </LoadingProvider>
       </CookiesProvider>
     </ThemeProvider>
   </StrictMode>,
