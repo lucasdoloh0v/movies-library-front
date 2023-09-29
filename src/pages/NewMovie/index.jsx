@@ -88,7 +88,7 @@ export function NewMovie() {
           <FormTag value={newTag} onChange={({ target }) => setNewTag(target.value)} callback={handleAddTag} />
         </Tags>
         <div className="row-div">
-          <Button title="Excluir filme" type="button" variant="secondary" />
+          <Button title="Excluir filme" type="button" variant="secondary" onClick={() => navigate(-1)} />
           <Button title="Salvar" type="submit" onClick={handleCreateNote} />
         </div>
       </MovieForm>
